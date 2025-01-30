@@ -1,0 +1,25 @@
+@import 'variables.css';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: var(--colorMain);
+    background-color: var(--colorBgMain);
+    font-family: var(--fontMain);
+}
+
+nav {
+    ul {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        gap: 1rem;
+        li {
+            list-style-type: none;
+        }
+    }
+}
