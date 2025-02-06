@@ -1,0 +1,7 @@
+address {
+    font-style: normal;
+
+    #physical_address {
+        margin-bottom: 1rem;
+    }
+}
