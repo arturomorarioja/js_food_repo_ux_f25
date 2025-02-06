@@ -15,4 +15,6 @@ document.querySelector('#frmContact').addEventListener('submit', (e) => {
     `;
 
     alert(submittedInfo);
+
+    window.location.replace('index.html');
 });
