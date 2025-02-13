@@ -55,7 +55,7 @@ const showRandomRecipesWithInnerHTMLAndOnePageRefresh = async (numRecipes = DEFA
     }
 };
 
-const showRandomRecipes = async (numRecipes = DEFAULT_RECIPES) => {
+const showRandomRecipesWithCreateElement = async (numRecipes = DEFAULT_RECIPES) => {
 
     const fragment = document.createDocumentFragment();
     for (let index = 0; index < numRecipes; index++) {
@@ -93,6 +93,34 @@ const showRandomRecipes = async (numRecipes = DEFAULT_RECIPES) => {
             article.append(div);
 
             fragment.append(article);
+        })
+        .catch(error => console.log(error));
+    }
+    document.querySelector('#recipe-list').append(fragment);
+};
+
+const showRandomRecipes = async (numRecipes = DEFAULT_RECIPES) => {
+
+    const fragment = document.createDocumentFragment();
+    for (let index = 0; index < numRecipes; index++) {
+
+        await fetch(`${BASE_URL}/random.php`)
+        .then(response => response.json())
+        .then(data => {
+            data = data.meals[0];
+
+            const card = document.querySelector('#recipe-card').content.cloneNode(true);
+
+            card.querySelector('h2').innerText = data.strMeal;
+
+            const img = card.querySelector('img');
+            img.setAttribute('src', `${data.strMealThumb}/preview`);
+            img.setAttribute('alt', data.strMeal);
+
+            card.querySelector('.pill:first-of-type').innerText = data.strCategory;
+            card.querySelector('.pill:last-of-type').innerText = data.strArea;
+
+            fragment.append(card);
         })
         .catch(error => console.log(error));
     }
