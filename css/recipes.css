@@ -1,0 +1,27 @@
+#recipe-list {
+    article {
+        margin-bottom: 1rem;
+        border-top: solid thin var(--colorSecondary);
+
+        h2 {
+            font-size: 1.2rem;
+        }
+        
+        img {
+            display: block;
+            margin: 0 auto;
+        }
+        
+        div:has(.pill) {
+            margin-top: 0.5rem;
+            text-align: center;
+            .pill {
+                display: inline-block;
+                padding: 0 1rem;
+                border-radius: 1rem;
+                color: var(--colorBgMain);
+                background-color: var(--colorSecondary);
+            }
+        }
+    }
+}
