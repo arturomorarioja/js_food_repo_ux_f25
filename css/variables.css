@@ -10,4 +10,6 @@
     --fontTitle: DynaPuff, serif;
 
     --maxBodyWidth: 1024px;
+    --cardWidth: 250px;
+    --imgThumbnailDimension: 150px;
 }
