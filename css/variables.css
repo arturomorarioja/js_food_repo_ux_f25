@@ -8,4 +8,6 @@
 
     --fontMain: 'Open Sans', Arial, sans serif;
     --fontTitle: DynaPuff, serif;
+
+    --maxBodyWidth: 1024px;
 }

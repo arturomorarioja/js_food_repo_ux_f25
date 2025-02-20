@@ -10,6 +10,11 @@ body {
     color: var(--colorMain);
     background-color: var(--colorBgMain);
     font-family: var(--fontMain);
+
+    @media (min-width: 1024px) {
+        max-width: var(--maxBodyWidth);
+        margin: auto;
+    }
 }
 
 header, footer {
