@@ -1,1 +1,3 @@
 .vscode
+eslint.config.mjs
+node_modules

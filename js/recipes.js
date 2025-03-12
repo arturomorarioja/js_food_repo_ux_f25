@@ -2,6 +2,7 @@ import { BASE_URL } from './info.js';
 
 const DEFAULT_RECIPES = 10;
 
+// eslint-disable-next-line no-unused-vars
 const showRandomRecipesWithInnerHTML = (numRecipes = DEFAULT_RECIPES) => {
 
     for (let index = 0; index < numRecipes; index++) {
@@ -27,6 +28,7 @@ const showRandomRecipesWithInnerHTML = (numRecipes = DEFAULT_RECIPES) => {
     }
 };
 
+// eslint-disable-next-line no-unused-vars
 const showRandomRecipesWithInnerHTMLAndOnePageRefresh = async (numRecipes = DEFAULT_RECIPES) => {
 
     let recipeList = '';
@@ -55,6 +57,7 @@ const showRandomRecipesWithInnerHTMLAndOnePageRefresh = async (numRecipes = DEFA
     }
 };
 
+// eslint-disable-next-line no-unused-vars
 const showRandomRecipesWithCreateElement = async (numRecipes = DEFAULT_RECIPES) => {
 
     const fragment = document.createDocumentFragment();
