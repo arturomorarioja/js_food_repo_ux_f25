@@ -1,3 +1,6 @@
+@import 'styles.css';
+@import 'pills.css';
+
 #recipe-list {
     article {
         margin-bottom: 1rem;
@@ -12,18 +15,6 @@
             width: var(--imgThumbnailDimension);
             height: var(--imgThumbnailDimension);
             margin: 0 auto;
-        }
-        
-        div:has(.pill) {
-            margin-top: 0.5rem;
-            text-align: center;
-            .pill {
-                display: inline-block;
-                padding: 0 1rem;
-                border-radius: 1rem;
-                color: var(--colorBgMain);
-                background-color: var(--colorSecondary);
-            }
         }
     }
 

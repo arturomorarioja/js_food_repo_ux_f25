@@ -103,3 +103,7 @@ dialog {
         margin-top: 1rem;
     }
 }
+
+.visible {
+    display: block;
+}

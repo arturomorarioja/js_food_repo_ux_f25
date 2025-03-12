@@ -116,6 +116,8 @@ const showRandomRecipes = async (numRecipes = DEFAULT_RECIPES) => {
 
             card.querySelector('h2').innerText = data.strMeal;
 
+            card.querySelector('a').setAttribute('href', `recipe.htm?id=${data.idMeal}`);
+
             const img = card.querySelector('img');
             img.setAttribute('src', `${data.strMealThumb}/preview`);
             img.setAttribute('alt', data.strMeal);
