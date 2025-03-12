@@ -2,7 +2,6 @@ import { BASE_URL } from './info.js';
 
 const DEFAULT_RECIPES = 10;
 
-// eslint-disable-next-line no-unused-vars
 const showRandomRecipesWithInnerHTML = (numRecipes = DEFAULT_RECIPES) => {
 
     for (let index = 0; index < numRecipes; index++) {
@@ -28,7 +27,6 @@ const showRandomRecipesWithInnerHTML = (numRecipes = DEFAULT_RECIPES) => {
     }
 };
 
-// eslint-disable-next-line no-unused-vars
 const showRandomRecipesWithInnerHTMLAndOnePageRefresh = async (numRecipes = DEFAULT_RECIPES) => {
 
     let recipeList = '';
@@ -57,7 +55,6 @@ const showRandomRecipesWithInnerHTMLAndOnePageRefresh = async (numRecipes = DEFA
     }
 };
 
-// eslint-disable-next-line no-unused-vars
 const showRandomRecipesWithCreateElement = async (numRecipes = DEFAULT_RECIPES) => {
 
     const fragment = document.createDocumentFragment();
@@ -115,8 +112,6 @@ const showRandomRecipes = async (numRecipes = DEFAULT_RECIPES) => {
             const card = document.querySelector('#recipe-card').content.cloneNode(true);
 
             card.querySelector('h2').innerText = data.strMeal;
-
-            card.querySelector('a').setAttribute('href', `recipe.htm?id=${data.idMeal}`);
 
             const img = card.querySelector('img');
             img.setAttribute('src', `${data.strMealThumb}/preview`);
