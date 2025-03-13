@@ -46,6 +46,15 @@ nav {
         gap: 1rem;
         li {
             list-style-type: none;
+            button {
+                border: none;
+                font-size: 1rem;
+                color: var(--colorSecondary);
+                background-color: var(--colorBgMain);
+                &:hover {
+                    font-weight: bold;
+                }
+            }
         }
     }
 }
@@ -60,4 +69,32 @@ a {
 
 button {
     cursor: pointer;
+}
+
+dialog {
+    width: 90%;
+    max-width: var(--maxBodyWidth);
+    margin: auto;
+    padding: 1rem;
+    border-radius: 1rem;
+
+    header {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        gap: 1rem;
+
+        padding: 0;
+
+        button.close {
+            height: 0.5rem;
+            font-size: 1.3rem;
+            border: none;
+            background-color: var(--colorBgMain);
+        }
+    }
+
+    ul {
+        margin-left: 1.5rem;
+    }
 }

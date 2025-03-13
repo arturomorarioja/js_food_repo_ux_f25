@@ -1,3 +1,5 @@
+@import 'styles.css';
+
 @media (min-width: 640px) {
     #wrapper {
         display: flex;
@@ -50,31 +52,5 @@ form {
             background-color: var(--colorSecondary);
             border: none;
         }
-    }
-}
-
-#contact_message {
-    margin: auto;
-    padding: 1rem;
-    border-radius: 1rem;
-
-    header {
-        display: flex;
-        flex-flow: row nowrap;
-        justify-content: space-between;
-        gap: 1rem;
-
-        padding: 0;
-
-        button.close {
-            height: 0.5rem;
-            font-size: 1.3rem;
-            border: none;
-            background-color: var(--colorBgMain);
-        }
-    }
-
-    ul {
-        margin-left: 1.5rem;
     }
 }
