@@ -123,6 +123,10 @@ const showRandomRecipes = async (numRecipes = DEFAULT_RECIPES) => {
             card.querySelector('.pill:first-of-type').innerText = data.strCategory;
             card.querySelector('.pill:last-of-type').innerText = data.strArea;
 
+            card.querySelectorAll('a').forEach(link => {
+                link.href = `recipe.htm?id=${data.idMeal}`;
+            });
+
             fragment.append(card);
         })
         .catch(error => console.log(error));
