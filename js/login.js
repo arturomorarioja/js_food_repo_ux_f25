@@ -21,7 +21,10 @@ document.querySelector('#frmLogin').addEventListener('submit', (e) => {
     .then(data => {
         console.log(data);
         if (Object.keys(data).includes('user_id')) {
-            // Log in successful
+            sessionStorage.setItem('food_repo_user_id', data.user_id);
+            sessionStorage.setItem('food_repo_user_token', data.token);
+
+            window.location.href = 'index.html';
         } else {
             handleError(data.error);
         }

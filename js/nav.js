@@ -26,3 +26,22 @@ document.querySelector('#btnAbout').addEventListener('click', function(e) {
     }
     modal.showModal();
 });
+
+// Handling of utility menu options based on whether the user is logged in or not
+if (sessionStorage.getItem('food_repo_user_id') !== null) {
+    document.querySelector('#logged')?.classList.remove('hidden');
+    document.querySelector('#not_logged')?.classList.add('hidden');
+} else {
+    document.querySelector('#logged')?.classList.add('hidden');
+    document.querySelector('#not_logged')?.classList.remove('hidden');
+}
+
+// Logging out implies removing user data from sessionStorage
+document.querySelector('#btnLogout')?.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    sessionStorage.removeItem('food_repo_user_id');
+    sessionStorage.removeItem('food_repo_user_token');
+
+    window.location.href = 'index.html';
+});
