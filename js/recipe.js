@@ -1,5 +1,5 @@
-import { BASE_URL } from './info.js';
-import { handleError } from './api.js';
+import { BASE_URL, USERS_BASE_URL } from './info.js';
+import { handleError, header } from './api.js';
 
 let recipeID = new URLSearchParams(window.location.search);
 recipeID = recipeID.get('id');
@@ -11,6 +11,9 @@ fetch(`${BASE_URL}/lookup.php?i=${recipeID}`)
     console.log(data);
 
     document.querySelector('h2').innerText = data.strMeal;
+    if (sessionStorage.getItem('food_repo_user_id') !== null) {
+        document.querySelector('#btnFavourite').classList.remove('hidden');
+    }
 
     const picture = document.querySelector('#picture_meal');
     picture.src = data.strMealThumb;
@@ -35,3 +38,26 @@ fetch(`${BASE_URL}/lookup.php?i=${recipeID}`)
 })
 .catch(handleError);
 
+document.querySelector('#btnFavourite').addEventListener('click', function(e) {
+    e.preventDefault();
+
+    const markAsFavourite = this.innerText === '☆';
+    const userID = sessionStorage.getItem('food_repo_user_id');
+
+    const params = new URLSearchParams();
+    params.append('recipe_id', recipeID);
+
+    fetch(`${USERS_BASE_URL}/users/${userID}/favourites`,
+        {
+            method: markAsFavourite ? 'POST' : 'DELETE',
+            headers: header,
+            body: params
+        }
+    )
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+        this.innerHTML = markAsFavourite ? '&#9733;' : '&#9734;';    // Black or white star
+    })
+    .catch(handleError);
+});

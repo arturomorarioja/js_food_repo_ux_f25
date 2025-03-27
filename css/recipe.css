@@ -3,3 +3,16 @@
 img#picture_meal {
     max-width: 100%;
 }
+
+header:has(button) {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    #btnFavourite {
+        border: none;
+        background-color: var(--colorBgMain);
+        font-size: 1.8rem;
+    }
+}

@@ -23,11 +23,30 @@ document.querySelector('#frmLogin').addEventListener('submit', (e) => {
         if (Object.keys(data).includes('user_id')) {
             sessionStorage.setItem('food_repo_user_id', data.user_id);
             sessionStorage.setItem('food_repo_user_token', data.token);
+            loadFavourites(data.user_id);
 
-            window.location.href = 'index.html';
+            // window.location.href = 'index.html';
         } else {
             handleError(data.error);
         }
     })
     .catch(handleError);
 });
+
+const loadFavourites = (userID) => {
+
+    const tokenHeader = new Headers({
+        'X-Session-Token': sessionStorage.getItem('food_repo_user_token')
+    });
+
+    fetch(`${USERS_BASE_URL}/users/${userID}/favourites`,
+        {
+            headers: tokenHeader
+        }
+    )
+    .then(response => response.json())
+    .then(data => {
+        sessionStorage.setItem('food_repo_user_favourites', JSON.stringify(data));
+    })
+    .catch(handleError);
+};
