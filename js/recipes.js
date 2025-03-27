@@ -1,4 +1,5 @@
 import { BASE_URL } from './info.js';
+import { handleError } from './api.js';
 
 const DEFAULT_RECIPES = 10;
 
@@ -129,7 +130,7 @@ const showRandomRecipes = async (numRecipes = DEFAULT_RECIPES) => {
 
             fragment.append(card);
         })
-        .catch(error => console.log(error));
+        .catch(handleError);
     }
     document.querySelector('#recipe-list').append(fragment);
 };

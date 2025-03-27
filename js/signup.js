@@ -1,4 +1,5 @@
 import { USERS_BASE_URL } from './info.js';
+import { handleError } from './api.js';
 
 document.querySelector('#frmSignup').addEventListener('submit', (e) => {
     e.preventDefault();
@@ -8,8 +9,7 @@ document.querySelector('#frmSignup').addEventListener('submit', (e) => {
     const repeatPassword = e.target.txtRepeatPassword.value.trim();
 
     if (password !== repeatPassword) {
-        document.querySelector('#errorText').innerText = 'Passwords must match.';
-        document.querySelector('#error').classList.remove('hidden');
+        handleError('Passwords must match.');
         return false;
     }
 
@@ -34,5 +34,5 @@ document.querySelector('#frmSignup').addEventListener('submit', (e) => {
     .then(data => {
         window.location.href = 'login.htm';
     })
-    .catch(error => console.log(error));
+    .catch(handleError);
 });

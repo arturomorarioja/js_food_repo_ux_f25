@@ -98,3 +98,14 @@ dialog {
         margin-left: 1.5rem;
     }
 }
+
+#error {
+    border: thick solid var(--colorError);
+    border-radius: 1rem;
+    padding: 0 1rem 0.5rem 1rem;
+    margin-bottom: 1rem;
+}
+
+.hidden {
+    display: none;
+}

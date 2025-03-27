@@ -1,4 +1,5 @@
 import { BASE_URL } from './info.js';
+import { handleError } from './api.js';
 
 let recipeID = new URLSearchParams(window.location.search);
 recipeID = recipeID.get('id');
@@ -32,5 +33,5 @@ fetch(`${BASE_URL}/lookup.php?i=${recipeID}`)
     }
     document.querySelector('#ingredients').append(ingredients);
 })
-.catch(error => console.log(error));
+.catch(handleError);
 
