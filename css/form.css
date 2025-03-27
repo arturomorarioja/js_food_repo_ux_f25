@@ -1,0 +1,41 @@
+form {
+    margin-top: 1rem;
+
+    fieldset {
+        padding: 1rem;
+        border-radius: 1rem;
+
+        div:not(:last-of-type) {
+            margin-bottom: 0.5rem; 
+            * {
+                display: block;
+                width: 100%;
+            }
+
+            textarea {
+                height: 6rem;
+            }
+        }
+
+        button {
+            padding: 0.5rem 2rem;
+            font-family: var(--fontMain);
+            font-size: 1rem;
+            border-radius: 1.5rem;
+            color: var(--colorBgMain);
+            background-color: var(--colorSecondary);
+            border: none;
+        }
+    }
+
+    #error {
+        border: thick solid var(--colorError);
+        border-radius: 1rem;
+        padding: 0 1rem 0.5rem 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .hidden {
+        display: none;
+    }
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up | Food Repo</title>
+    <link rel="stylesheet" href="css/signup.css">
+    <script src="js/nav.js" type="module"></script>
+    <script src="js/signup.js" type="module"></script>
+</head>
+<body>
+    <header>
+        <h1>Food Repo</h1>
+    </header>
+    <nav id="main">
+        <ul>    
+            <li><a href="index.html" title="Homepage">Home</a></li>
+            <li><button id="btnAbout">About</button></li>
+            <li><a href="contact.htm" title="Contact page">Contact</a></li>
+        </ul>
+    </nav>
+    <nav id="utility">
+        <ul>
+            <li><a href="login.htm" title="Log in">Log in</a></li>
+            <li><a href="signup.htm" title="Sign up">Sign up</a></li>
+        </ul>
+    </nav>
+    <main>
+        <header>
+            <h2>Sign up</h2>
+        </header>
+        <form id="frmSignup">
+            <fieldset>
+                <section id="error" class="hidden">
+                    <header>
+                        <h3>Error</h3>
+                    </header>
+                    <p id="errorText"></p>
+                </section>
+                <div>
+                    <label for="txtFirstName">First name</label>
+                    <input type="text" id="txtFirstName" required>
+                </div>
+                <div>
+                    <label for="txtLastName">Last name</label>
+                    <input type="text" id="txtLastName" required>
+                </div>
+                <div>
+                    <label for="txtEmail">Email</label>
+                    <input type="email" id="txtEmail" required>
+                </div>
+                <div>
+                    <label for="txtPassword">Password</label>
+                    <input type="password" id="txtPassword" required>
+                </div>
+                <div>
+                    <label for="txtRepeatPassword">Repeat password</label>
+                    <input type="password" id="txtRepeatPassword" required>
+                </div>
+                <div>
+                    <button type="submit">Sign up</button>
+                </div>
+            </fieldset>
+        </form>
+    </main>
+</body>
+</html>

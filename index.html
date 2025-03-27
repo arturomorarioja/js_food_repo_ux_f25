@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Food Repo</title>
+    <title>Home | Food Repo</title>
     <link rel="stylesheet" href="css/recipes.css">
     <script src="js/nav.js" type="module"></script>
     <script src="js/recipes.js" type="module"></script>
@@ -12,14 +12,23 @@
     <header>
         <h1>Food Repo</h1>
     </header>
-    <nav>
+    <nav id="main">
         <ul>    
             <li><a href="index.html" title="Homepage">Home</a></li>
             <li><button id="btnAbout">About</button></li>
             <li><a href="contact.htm" title="Contact page">Contact</a></li>
         </ul>
     </nav>
+    <nav id="utility">
+        <ul>
+            <li><a href="login.htm" title="Log in">Log in</a></li>
+            <li><a href="signup.htm" title="Sign up">Sign up</a></li>
+        </ul>
+    </nav>
     <main>
+        <header>
+            <h2>Recipes</h2>
+        </header>
         <section id="recipe-list">
         </section>
     </main>
